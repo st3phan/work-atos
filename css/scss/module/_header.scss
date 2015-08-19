@@ -1,0 +1,161 @@
+header[role=banner] {
+    @include clear;
+    padding: $distance 0;
+}
+
+.logo {
+    display: inline-block;
+    width: 139px;
+    height: 47px;
+    background-image: url(../img/svg/logo.svg);
+    background-repeat: no-repeat;
+    @include background-size(100% 100%);
+    
+    .no-svg & {
+        background-image: url(../img/logo.png);
+    }
+    
+    @include respond-to(large) {
+        margin-left: $gutter-full;
+    }
+}
+
+.header-title {
+    clear: both;
+    padding-left: $gutter;
+    margin-top: $distance-s;
+    padding: $distance 0 $distance 0;
+    border-top: 2px solid $green;
+    border-bottom: 2px solid $green;
+    
+    @include respond-to(large) {
+        padding-left: $gutter-full;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+    
+    .join-the-competition {
+        float: right;
+        
+        @include respond-to(large) {
+            display: none;
+        }
+    }
+}
+
+.header-title-text {
+    @include rem(font-size, $double-small-pica);
+    
+    @include respond-to(medium) {
+        @include rem(font-size, $double-pica);
+    }
+}
+
+.business_technologists {
+    display: none;
+    
+    @include respond-to(large) {    
+        float: right;
+        display: inline-block;
+        width: 385px;
+        height: 16px;
+        background-image: url(../img/svg/business_technologists.svg);
+        background-repeat: no-repeat;
+        
+        .no-svg & {
+            background-image: url(../img/business_technologists.png);
+        }
+    }
+}
+
+.header-sub {
+    @include clear;
+    float: right;
+}
+
+.header-meta {
+    @include clear;
+    float: right;
+    clear: both;
+    margin: $distance 0 0 0;    
+    display: none;
+    
+    @include respond-to(large) {
+        display: block;
+    }
+    
+    li {
+        float: left;
+        font-size: $pica;
+        line-height: 2;
+        
+        & + li {
+            margin-left: $gutter;
+        }
+        
+        a {
+            display: block;
+            color: $black;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.header-social {
+    display: none;
+    @include clear;
+    float: right;
+    
+    @include respond-to(large) {
+        display: block;
+    }
+    
+    li {
+        float: left;
+        margin: 0 0 0 $gutter;
+    }
+
+    a {
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @include background-size(30px 30px);
+    }
+
+    .facebook {
+        background-image: url(../img/svg/facebook.svg);
+        
+        .no-svg & {
+            background-image: url(../img/facebook.png);
+        }
+        
+        &:hover {
+            background-image: url(../img/svg/facebook_on.svg);
+            
+            .no-svg & {
+                background-image: url(../img/facebook_on.png);
+            }
+        }
+    }
+    
+    .youtube {
+        background-image: url(../img/svg/youtube.svg);
+        
+        .no-svg & {
+            background-image: url(../img/youtube.png);
+        }
+        
+        &:hover {
+            background-image: url(../img/svg/youtube_on.svg);
+            
+            .no-svg & {
+                background-image: url(../img/youtube_on.png);
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+* {
+    @include box-sizing(border-box);
+    *behavior: url(/js/boxsizing.htc);
+}
+
+body {
+    background-color: $greyExtraLight;
+    font-family: $fontstack-text;
+    
+    @include respond-to(medium) {
+        background-image: url(../img/background.jpg);
+        
+        @include retina {
+            background-image: url(../img/background@2x.jpg);
+            @include background-size(990px 774px);
+        }
+    }
+}
+
+.doc {
+    overflow-x: hidden;
+    position: relative;
+}
+
+.hr {
+    margin: $distance 0;
+    border: 0;
+    border-top: 1px dotted $black;
+
+    @include respond-to(small) {
+        margin: $distance-s 0;    
+    }
+    
+    @include respond-to(large) {
+        margin: $distance-m 0;    
+    }
+}
+
+ul,
+ol,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+    text-decoration: none;
+}

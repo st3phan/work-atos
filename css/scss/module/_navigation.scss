@@ -1,0 +1,533 @@
+.menu-toggle {
+    float: right;
+    display: block;
+    padding: 5px 15px 10px 15px;
+    background-image: url(../img/svg/swoosh_toggle_menu.svg);
+    @include background-size(100% 100%);
+    @include rem(font-size, $great-primer);
+    color: $white;
+    
+    .no-svg & {
+        background-color: $green;
+    }
+    
+    @include respond-to(large) {
+        display: none;
+    }
+    
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 12px;
+        margin: 0 0 0 5px;
+        vertical-align: middle;
+        background-image: url(../img/svg/menu.svg);
+    }
+}
+
+nav[role=navigation] {
+    overflow: hidden;
+    background-color: $green;
+    background-image: url(../img/svg/smartphone_menu.svg);
+    background-repeat: no-repeat;
+    background-position: 170px 60px;
+    
+    @include respond-to(large) {
+        overflow: visible;
+        margin: $distance -15px 0 -15px;
+        background-color: transparent;
+        background-image: url(../img/svg/swoosh_nav.svg);
+        background-position: 0 0;
+        @include background-size(100% 100%);
+        
+        .no-svg & {
+            position: relative!important;
+            right: auto!important;
+            background-color: $green;
+            
+            &:after,
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 11px;
+                height: 100%;
+            }
+            
+            &:before {
+                left: -11px;
+                background: url(../img/nav-nosvg-left.png) no-repeat;
+            }
+            
+            &:after {
+                right: -11px;
+                background: url(../img/nav-nosvg-right.png) no-repeat;
+            }
+        }
+    }
+    
+    .js & {
+        position: absolute;
+        top: 0;
+        right: -16em;
+        width: 16em;
+        height: 100%;
+        
+        @include respond-to(large) {
+            max-width: none;
+            position: static;
+            width: auto;
+        }
+    }
+    
+    > ul {
+        margin: 0;
+        padding: 0;
+        
+        @include respond-to(large) {
+            @include clear;
+            margin: 0 0 0 $gutter-full;
+        }
+        
+        > li {
+            position: relative;
+            margin: 0 $gutter;
+            font-size: $columbian;
+        
+            @include respond-to(large) {
+                float: left;
+                border: 0;
+                font-size: $english;
+            }
+            
+            @include respond-to(full) {
+                margin-right: $gutter;
+                margin-left: $gutter;
+            }
+            
+            &:hover {
+            
+                > a {
+                    color: $black;
+                }
+            
+                ul {
+                    display: block;
+                }
+            }
+        
+            a {
+                display: block;
+                padding: $distance $gutter;
+                color: $white;
+                text-decoration: none;
+                border-bottom: 1px dotted $black;
+                
+                @include respond-to(large) {
+                    padding: 4px 0 8px;
+                    border: 0;
+                }
+                
+                &:hover,
+                &.active {
+                    color: $black;
+                }
+            }
+        }
+        
+        ul {
+        
+            @include respond-to(large) {
+                display: none;
+                position: absolute;
+                z-index: 9999;
+                background: $white;
+                padding: 2px;
+            }
+            
+            li {
+                @include rem(font-size, $english);
+                
+                &:first-child a {
+                    margin-top: 0;
+                }
+                
+                a {
+                    padding-left: $gutter-full;
+                    
+                    @include respond-to(large) {
+                        margin: 2px 0 0 0;
+                        padding-left: $gutter;
+                        padding-right: $gutter;
+                        background: $greyLight;
+                        color: $black;
+                        white-space: nowrap;
+                    }
+                    
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        width: 6px;
+                        height: 9px;
+                        margin: 0 5px 0 0;
+                        background-image: url(../img/svg/arrow_right_white.svg);
+                        @include background-size(100% 100%);
+                        
+                        @include respond-to(large) {
+                            display: none;
+                        }
+                    }
+                    
+                    &.active,
+                    &:hover {
+                        
+                        @include respond-to(large) {
+                            background: $purple;
+                            color: $white;
+                        }
+                    
+                        &:before {
+                            background-image: url(../img/svg/arrow_right_black.svg);
+                        }
+                    }
+                }
+            }
+        }
+        
+        .show-on-mobile {
+        
+            @include respond-to(large) {
+                display: none;
+            }
+        }
+    }
+}
+
+.nav-crumbpath {
+    margin-top: $distance;
+    
+    ol {
+        @include clear;
+    }
+    
+    li {
+        float: left;
+        @include rem(font-size, $pica);
+        color: $green;
+        
+        & + li {
+
+            &:before {
+                display: inline-block;
+                margin: 0 $gutter/2;
+                content: "/";
+                color: $black;
+            }
+        }
+    }
+    
+    a {
+        color: $black;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.nav-sub-col {
+    display: none;
+    
+    @include respond-to(large) {
+        display: block;
+    }
+}
+
+.nav-sub {
+
+    ol {
+        @include rem(font-size, $pica);
+
+        > li {
+            
+            &.active {
+            
+                > a {
+                    position: relative;
+                    z-index: 2;
+                    background-image: url(../img/svg/swoosh_purple.svg);
+                    color: $white;
+                    
+                    .no-svg & {
+                        background: $purple;
+                    }
+                }
+            }
+        
+            a {
+                position: relative;
+                display: block;
+                padding: 10px 35px 10px 20px;
+                background-image: url(../img/svg/swoosh_grey.svg);
+                background-repeat: no-repeat;
+                @include background-size(100% 100%);
+                color: $black;
+                
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: $gutter-full;
+                    background-image: url(../img/svg/arrow_down_small.svg);
+                    @include background-size(100% 100%);
+                    width: 9px;
+                    height: 10px;
+                    margin: -5px 0 0 -4px;
+                }
+                
+                &.active {
+                    font-weight: bold;
+                }
+            }
+        }
+        
+        ol {
+            position: relative;
+            z-index: 1;
+            margin: -6px 7px 0 7px;
+        
+            li {
+            
+                &:first-child a {
+                    padding-top: 15px;
+                }
+            
+                a {
+                    padding-left: 13px;
+                    padding-right: 28px;
+                    background: $greyExtraLight;
+
+                    &:after {
+                        display: none;
+                    }
+                    
+                    &:hover {
+                        background: $greyLight;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.nav-paging {
+    margin: $distance 0 0 0;
+    
+    ol {
+        @include clear;
+    }
+    
+    li {
+        position: relative;
+        float: left;
+        @include rem(font-size, $great-primer);
+        color: $grey;
+        line-height: 28px;
+        
+        & + li {
+            margin-left: $gutter;
+        }
+        
+        .item {
+            display: none;
+            @include rem(font-size, $english);
+            color: $grey;
+            text-align: center;
+            
+            @include respond-to(medium) {
+                display: block;
+            }
+            
+            &:hover,
+            &.active {
+                color: $black;
+            }
+        }
+        
+        &.first .item,
+        &.prev .item,
+        &.next .item,
+        &.last .item {
+            display: block;
+            width: 32px;
+            height: 28px;
+            background-image: url(../img/svg/swoosh_green_small.svg);
+            @include background-size(100% 100%);
+            color: $white;
+            
+            .no-svg & {
+                background: $green;
+            }
+            
+            &:hover {
+                color: $black;
+            }
+            
+            .pointerevents & {
+                @extend .ir;
+            }
+        }
+        
+        &:after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: "";
+            @include background-size(100% 100%);
+            pointer-events: none;
+            
+            .no-pointerevents & {
+                display: none;
+            }
+        }
+        
+        &.first {
+            
+            &:after {
+                width: 11px;
+                height: 8px;
+                margin: -4px 0 0 -6px;
+                background-image: url(../img/svg/nav-first-off.svg);
+            }
+            
+            &:hover:after {
+                background-image: url(../img/svg/nav-first-on.svg);
+            }
+            
+            &.inactive:after {
+                background-image: url(../img/svg/nav-first-inactive.svg);            
+            }
+        }
+        
+        &.prev {
+        
+            &:after {
+                width: 6px;
+                height: 9px;
+                margin: -5px 0 0 -3px;
+                background-image: url(../img/svg/nav-prev-off.svg);
+            }
+            
+            &:hover:after {
+                background-image: url(../img/svg/nav-prev-on.svg);
+            }
+        }
+        
+        &.next {
+        
+            &:after {
+                width: 6px;
+                height: 9px;
+                margin: -5px 0 0 -3px;
+                background-image: url(../img/svg/nav-next-off.svg);
+            }
+            
+            &:hover:after {
+                background-image: url(../img/svg/nav-next-on.svg);            
+            }
+        }
+        
+        &.last {
+        
+            &:after {
+                width: 11px;
+                height: 8px;
+                margin: -4px 0 0 -6px;
+                background-image: url(../img/svg/nav-last-off.svg);
+            }
+            
+            &:hover:after {
+                background-image: url(../img/svg/nav-last-on.svg);            
+            }
+        }
+    }
+}
+
+.filter-nav {
+    margin: 0 0 $distance;
+    background-color: $green;
+    padding: $distance/2 $gutter;
+    
+    @include respond-to(medium) {
+        padding-right: $gutter-full;
+        padding-left: $gutter-full;
+        background-color: transparent;
+        background-image: url(../img/svg/swoosh_nav.svg);
+        background-position: 0 0;
+        @include background-size(100% 100%);
+        
+        .no-svg & {
+            background: $green;
+        }
+    }
+    
+    .header {
+        float: left;
+        margin-right: $gutter;
+        vertical-align: middle;
+        @include rem(font-size, $english);
+        color: $white;
+        
+        @include respond-to(large) {
+            @include rem(font-size, $double-pica);        
+        }
+    }
+
+    ol {
+        @include clear;
+        vertical-align: middle;
+        overflow: hidden;
+    }
+    
+    li {
+        display: inline-block;
+    
+        @include respond-to(medium) {
+            float: left;
+            color: $white;
+        }
+        
+        .no-svg & {
+            padding: 10px 0;
+        }
+        
+        & + li {
+            margin-top: 2px;
+        
+            @include respond-to(medium) {
+                margin-top: 0;
+                margin-left: $gutter;
+            }
+        }
+        
+        .btn {
+        
+            @include respond-to(large) {
+                @include rem(font-size, $english);
+            }
+            
+            @include respond-to(full) {
+                @include rem(font-size, $great-primer);
+            }
+            
+            &:before {
+                display: none;
+                
+                .no-svg & {
+                    display: block;
+                }
+            }
+        }
+    }
+}

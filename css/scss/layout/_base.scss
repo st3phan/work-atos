@@ -1,0 +1,48 @@
+.page-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: $max-total-width;
+    margin: 0 auto;
+    
+    &.active {
+        right: 16em;
+        overflow: visible;
+        
+        @include respond-to(large) {
+            right: 0;
+        }
+    }
+    
+    @include respond-to(large) {
+        padding: 0 $distance-m;
+    }
+}
+
+.page-container {
+    background: $white;
+
+    @include respond-to(small) {
+        padding: 0 $gutter;
+    }
+
+    @include respond-to(medium) {
+        padding: 0 $gutter-full;
+    }
+}
+
+[role="main"] {
+    margin: $distance 0 0;
+
+    @include respond-to(small) {
+        margin-top: $distance-s;
+    }
+    
+    @include respond-to(medium) {
+        margin-top: $distance-m;
+    }
+    
+    > header {
+        margin: 0 0 $distance 0;
+    }
+}

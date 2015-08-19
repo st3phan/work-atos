@@ -1,0 +1,65 @@
+.scribble {
+    display: none;
+    
+    @include respond-to(large) {
+        display: block;
+    }
+}
+
+.scribble_smartphone {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    width: 289px;
+    height: 341px;
+    margin-left: -870px;
+    background-image: url(../img/svg/smartphone.svg);
+    background-repeat: no-repeat;
+    @include background-size(100% 100%);
+    
+    .no-svg & {
+        //margin-left: -770px\9; // Shame on me! Better: shame on <IE9!
+        background-image: url(../img/smartphone.png);
+    }
+}
+
+.scribble_flowchart {
+    position: absolute;
+    bottom: 20px;
+    right: 50%;
+    width: 227px;
+    height: 184px;
+    margin-right: -800px;
+    background-image: url(../img/svg/flowchart.svg);
+    background-repeat: no-repeat;
+    @include background-size(100% 100%);
+    
+    .no-svg & {
+        //margin-right: -700px\9; // Shame on me! Better: shame on <IE9!
+        background-image: url(../img/flowchart.png);    
+    }
+}
+
+.scribble_pencil {
+    position: absolute;
+    top: 640px;
+    left: 50%;
+    width: 377px;
+    height: 238px;
+    margin-left: -950px;
+    //margin-left: -860px; // Shame on me! Better: shame on <IE9!
+    background-image: url(../img/pencil.png);
+    background-repeat: no-repeat;
+}
+
+.scribble_stift {
+    position: absolute;
+    top: 70px;
+    right: 50%;
+    width: 344px;
+    height: 202px;
+    margin-right: -855px;
+    //margin-right: -770px\9; // Shame on me! Better: shame on <IE9!
+    background-image: url(../img/stift.png);
+    background-repeat: no-repeat;
+}

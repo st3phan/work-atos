@@ -1,0 +1,289 @@
+.user-form {
+    @include clear;
+
+    & + & {
+        margin-top: 20px;
+    }
+
+    fieldset {
+        @include clear;
+        margin: 0;
+        padding: 0;
+        border: 0;
+
+        & + fieldset {
+            margin-top: $distance;
+            padding-top: $distance;
+            border-top: 1px dotted $grey;
+        }
+    }
+
+    li {
+        @include clear;
+
+        & + li {
+            margin-top: $distance;
+        }
+    }
+
+    .btn {
+        float: right;
+        margin-top: $distance;
+
+        & + .btn {
+            margin-left: $gutter;
+        }
+    }
+
+    p {
+        margin: 0 0 $distance 0;
+
+        &.verify {
+            margin-bottom: 0;
+        }
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    label {
+        display: block;
+        margin: 0 0 5px 0;
+        @include rem(font-size, $english);
+        font-weight: bold;
+
+        @include respond-to(medium) {
+            float: left;
+            width: 30%;
+            margin: 0;
+            padding-right: $gutter-full;
+        }
+
+        small {
+            display: block;
+            color: $grey;
+        }
+    }
+
+    .error {
+
+        .fields {
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="file"],
+            select,
+            textarea {
+                border: 1px solid $red;
+            }
+        }
+    }
+
+    .message {
+        margin-top: 5px;
+        @include rem(font-size, $english);
+        color: $red;
+
+        &.positive {
+            color: $green;
+        }
+
+        + ol {
+            margin-top: $distance;
+        }
+    }
+
+    .fields {
+        @include clear;
+        overflow: hidden;
+        padding-left: 1px;
+
+        label {
+            width: auto;
+            padding-right: 0;
+            font-weight: normal;
+
+            @include respond-to(medium) {
+                display: inline-block;
+            }
+
+            & + label {
+
+                @include respond-to(medium) {
+                   margin-left: $gutter-full;
+                }
+            }
+
+            input {
+                position: relative;
+                top: -1px;
+                margin-right: 5px;
+            }
+        }
+
+        small {
+            @include rem(font-size, $long-primer);
+
+            &:before {
+                display: inline-block;
+                content: "↑";
+                margin-right: 5px;
+                font-weight: bold;
+                @include rem(font-size, $english);
+                color: $green;
+            }
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 2px;
+            @include rem(font-size, $english);
+            border: 1px solid $greyLight;
+            -webkit-appearance: none;
+            @include border-radius(0);
+
+            &.placeholder {
+                color: $grey;
+            }
+        }
+
+        input[type="file"] {
+            width: 100%;
+            @include rem(font-size, $english);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 2px;
+            @include rem(font-size, $english);
+            border: 1px solid $greyLight;
+            -webkit-appearance: none;
+            @include border-radius(0);
+
+            &.placeholder {
+                color: $grey;
+            }
+
+            .error & {
+                border: 1px solid red;
+            }
+        }
+
+        select {
+            width: 100%;
+            vertical-align: bottom;
+            @include rem(font-size, $english);
+            border: 1px solid $greyLight;
+        }
+
+        .dob {
+            float: left;
+            width: 33.3%;
+
+            & + .dob {
+                padding-left: $gutter;
+            }
+        }
+
+        .video {
+            display: none;
+            float: none;
+            clear: both;
+            padding-top: $distance;
+
+            &.show {
+                display: block;
+            }
+        }
+    }
+
+    .submit {
+        margin-top: $distance;
+        border-top: 1px dotted $grey;
+
+        .back {
+            float: left;
+        }
+    }
+}
+
+.teammember {
+    @include clear;
+
+    & + .teammember {
+        padding-top: $distance;
+        margin-top: $distance;
+        border-top: 1px dotted $grey;
+    }
+
+    .teammember_add {
+        float: left;
+        clear: both;
+
+        @include respond-to(small) {
+            float: right;
+            clear: none;
+        }
+    }
+
+    .teammember_remove {
+        display: none;
+        float: left;
+        clear: both;
+
+        @include respond-to(small) {
+            clear: none;
+        }
+    }
+}
+
+.remove-photo {
+    @include clear;
+    margin: 0 0 $distance 0;
+    border: 1px solid $greyLight;
+    padding: $distance/2;
+
+    img {
+        display: block;
+        max-width: 100%;
+        margin-bottom: 2px;
+    }
+}
+
+.video_message {
+    display: none;
+
+    a {
+        color: $grey;
+    }
+}
+
+.video {
+
+    iframe {
+        width: 100%;
+        height: 290px;
+        border: 0;
+    }
+}
+
+.some-space-below {
+
+    @include respond-to(medium) {
+        margin-bottom: 10px;
+    }
+}
+
+#my-university {
+
+    .js & {
+        display: none;
+    }
+}
+
+.flytrap {
+    display: none;
+}

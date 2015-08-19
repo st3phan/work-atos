@@ -1,0 +1,133 @@
+.project-intro-box {
+    @include clear;
+
+    .user-content {
+        
+        @include respond-to(medium) {
+            float: left;
+            width: 60%;
+            padding: 0 $gutter-full 0 0;
+        }
+    }
+
+    .project-vote-box {
+    
+        @include respond-to(medium) {
+            float: right;
+            width: 40%;
+        }
+    }   
+}
+
+.project-like {
+    @include clear;
+    position: relative;
+    padding: $distance $gutter;
+    background: $white;
+    
+    h1 {
+        margin: 0;
+        color: $blue;
+        
+        @include respond-to(large) {
+            float: left;
+        }
+    }
+    
+    .button {
+        float: none;
+        clear: both;
+        margin-top: $distance;
+        
+        @include respond-to(large) {
+            margin-top: 4px;
+            float: right;
+            clear: none;
+        }
+    }
+}
+
+.project-about-team {
+    position: relative;
+    margin: $distance 0 0 0;
+    padding: $distance $gutter 0;
+    background: $white;
+    
+    > header {
+        position: relative;
+        padding: 0 0 $distance/2;
+    }
+    
+    dt {
+        padding: $distance/2 0 0 0;
+        border-top: 1px dotted $black;
+        font-weight: bold;
+    }
+    
+    dd {
+        margin: 0;
+        padding: 0 0 $distance/2 0;
+    }
+    
+    .country {
+        position: relative;
+    }
+    
+    .flag {
+        position: absolute;
+        top: $distance;
+        right: $gutter;
+        width: 24px;
+        margin-top: -3px;
+    }
+}
+
+.project-share {
+    @include clear;
+    
+    li {
+        float: left;
+        width: 33.3%;
+    }
+}
+
+.project-photos {
+    margin-top: $distance;
+
+    img {
+        max-width: 100%;
+        margin-bottom: $distance;
+        vertical-align: bottom;
+    }
+}
+
+.project-visual {
+
+    img {
+        max-width: 100%;
+        vertical-align: bottom;
+    }
+}
+
+.project-paging {
+    float: right;
+    margin-bottom: $distance;
+    
+    @include respond-to(medium) {
+        margin-top: -$distance;
+    }
+    
+    li .item {
+        display: block;
+    }
+}
+
+.fb-comments-wrapper {
+    margin-top: $distance;
+    
+    .fb_iframe_widget,
+    .fb_iframe_widget span,
+    .fb_iframe_widget iframe[style] {
+        width: 100% !important;
+    }
+}

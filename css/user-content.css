@@ -1,0 +1,210 @@
+/*  Media queries
+    ========================================================================== */
+/*  Colours
+    ========================================================================== */
+/*  Type
+    ========================================================================== */
+/*  Alignment
+    ========================================================================== */
+/*
+    Media queries
+    https://github.com/nex3/sass/issues/408#issuecomment-6086901
+    ========================================================================== */
+/* 
+    Clearfix: contain floats
+    For clearing floats like a boss h5bp.com/q
+    ========================================================================== */
+/* 
+    Baseline, measured in pixels
+    The value should be the same as the fontsize value for the html element
+    If the html element's fontsize is set to 62.5% (of the browser's default fontsize of 16px),
+    then the variable below would be 10px.
+    ========================================================================== */
+/* line 118, scss/base/_mixins.scss */
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* line 5, scss/user-content.scss */
+.user-content {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+/* line 8, scss/user-content.scss */
+.user-content li,
+.user-content dl,
+.user-content dt,
+.user-content dd {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+/* line 17, scss/user-content.scss */
+.user-content ul {
+  margin: 0 0 16px 0;
+}
+/* line 20, scss/user-content.scss */
+.user-content ul li {
+  margin: 0 0 0 20px;
+  list-style: circle;
+}
+/* line 26, scss/user-content.scss */
+.user-content ol {
+  margin: 0 0 16px 0;
+}
+/* line 29, scss/user-content.scss */
+.user-content ol li {
+  margin: 0 0 0 25px;
+  list-style: decimal;
+}
+/* line 35, scss/user-content.scss */
+.user-content h1, .user-content h2, .user-content h3, .user-content h4, .user-content h5, .user-content h6 {
+  margin: 0;
+}
+/* line 39, scss/user-content.scss */
+.user-content h1 {
+  margin: 0 0 5px 0;
+  font-size: 36px;
+  font-size: 2.25rem;
+  color: #0066a1;
+}
+@media screen and (min-width: 48em) {
+  /* line 39, scss/user-content.scss */
+  .user-content h1 {
+    font-size: 48px;
+    font-size: 3rem;
+  }
+}
+/* line 49, scss/user-content.scss */
+.user-content h2 {
+  margin: 0 0 5px 0;
+  font-size: 24px;
+  font-size: 1.5rem;
+  color: #66a3c7;
+  letter-spacing: .75px;
+}
+@media screen and (min-width: 48em) {
+  /* line 49, scss/user-content.scss */
+  .user-content h2 {
+    font-size: 32px;
+    font-size: 2rem;
+  }
+}
+/* line 60, scss/user-content.scss */
+.user-content h3 {
+  margin: 0 0 5px 0;
+  font-size: 24px;
+  font-size: 1.5rem;
+  color: #000;
+  letter-spacing: .75px;
+}
+/* line 67, scss/user-content.scss */
+.user-content h4 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #000;
+  letter-spacing: .75px;
+}
+/* line 74, scss/user-content.scss */
+.user-content h5,
+.user-content h6 {
+  margin: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #000;
+  letter-spacing: .75px;
+}
+/* line 82, scss/user-content.scss */
+.user-content p {
+  margin: 0 0 16px 0;
+}
+/* line 86, scss/user-content.scss */
+.user-content a {
+  color: #000;
+  text-decoration: underline;
+}
+/* line 90, scss/user-content.scss */
+.user-content a:hover {
+  color: #a626aa;
+}
+/* line 95, scss/user-content.scss */
+.user-content img {
+  float: left;
+  margin: 5px 10px 0 0;
+}
+/* line 99, scss/user-content.scss */
+.user-content img.alignRight {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0;
+}
+/* line 108, scss/user-content.scss */
+.user-content .accordion li {
+  position: relative;
+  margin: 2px 0 0 0;
+  padding: 16px 16px 16px 60px;
+  list-style: none;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+/* line 116, scss/user-content.scss */
+.user-content .accordion li:after {
+  position: absolute;
+  content: "+";
+  top: 12px;
+  left: 16px;
+  width: 32px;
+  height: 28px;
+  font-size: 20px;
+  font-size: 1.25rem;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+  background-image: url(../img/svg/swoosh_green_small.svg);
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+/* line 130, scss/user-content.scss */
+.no-svg .user-content .accordion li:after {
+  background: #00b2a9;
+}
+/* line 137, scss/user-content.scss */
+.user-content .accordion li.active:after {
+  content: "-";
+}
+/* line 141, scss/user-content.scss */
+.user-content .accordion li.active h1, .user-content .accordion li.active h2, .user-content .accordion li.active h3, .user-content .accordion li.active h4, .user-content .accordion li.active h5, .user-content .accordion li.active h6 {
+  margin-bottom: 5px;
+}
+/* line 145, scss/user-content.scss */
+.user-content .accordion li.active p {
+  display: block !important;
+}
+/* line 150, scss/user-content.scss */
+.user-content .accordion li:first-child {
+  margin-top: 0;
+}
+/* line 154, scss/user-content.scss */
+.user-content .accordion li h1, .user-content .accordion li h2, .user-content .accordion li h3, .user-content .accordion li h4, .user-content .accordion li h5, .user-content .accordion li h6 {
+  margin-bottom: 0;
+}
+/* line 158, scss/user-content.scss */
+.user-content .accordion li p {
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+/* line 162, scss/user-content.scss */
+.js .user-content .accordion li p {
+  display: none;
+}
+/* line 166, scss/user-content.scss */
+.user-content .accordion li p + p {
+  margin-bottom: 16px;
+}

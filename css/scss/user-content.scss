@@ -1,0 +1,172 @@
+@import "compass/css3";
+@import "base/variables";
+@import "base/mixins";
+
+.user-content {
+    @include rem(font-size, $english);
+
+    li,
+    dl,
+    dt,
+    dd {
+        margin: 0;
+        padding: 0;
+        @include rem(font-size, $english);
+    }
+
+    ul {
+        margin: 0 0 $distance 0;
+
+        li {
+            margin: 0 0 0 20px;
+            list-style: circle;
+        }
+    }
+
+    ol {
+        margin: 0 0 $distance 0;
+
+        li {
+            margin: 0 0 0 25px;
+            list-style: decimal;
+        }
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        margin: 0;
+    }
+
+    h1 {
+        margin: 0 0 5px 0;
+        @include rem(font-size, $double-great-primer);
+        color: $blue;
+
+        @include respond-to(medium) {
+            @include rem(font-size, $canon);
+        }
+    }
+
+    h2 {
+        margin: 0 0 5px 0;
+        @include rem(font-size, $double-pica);
+        color: $blueLight;
+        letter-spacing: .75px;
+
+        @include respond-to(medium) {
+            @include rem(font-size, $four-line-brevier);
+        }
+    }
+
+    h3 {
+        margin: 0 0 5px 0;
+        @include rem(font-size, $double-pica);
+        color: $black;
+        letter-spacing: .75px;
+    }
+
+    h4 {
+        margin: 0 0 5px 0;
+        @include rem(font-size, $great-primer);
+        color: $black;
+        letter-spacing: .75px;
+    }
+
+    h5,
+    h6 {
+        margin: 0;
+        @include rem(font-size, $columbian);
+        color: $black;
+        letter-spacing: .75px;
+    }
+
+    p {
+        margin: 0 0 $distance 0;
+    }
+
+    a {
+        color: $black;
+        text-decoration: underline;
+
+        &:hover {
+            color: $purple;
+        }
+    }
+
+    img {
+        float: left;
+        margin: 5px $gutter 0 0;
+
+        &.alignRight {
+            float: right;
+            margin-left: $gutter;
+            margin-right: 0;
+        }
+    }
+
+    .accordion {
+
+        li {
+            position: relative;
+            margin: 2px 0 0 0;
+            padding: $distance $distance $distance 60px;
+            list-style: none;
+            background: $greyExtraLight;
+            cursor: pointer;
+
+            &:after {
+                position: absolute;
+                content: "+";
+                top: 12px;
+                left: $distance;
+                width: 32px;
+                height: 28px;
+                @include rem(font-size, $double-small-pica);
+                text-align: center;
+                color: $white;
+                line-height: 1;
+                background-image: url(../img/svg/swoosh_green_small.svg);
+                @include background-size(100% 100%);
+
+                .no-svg & {
+                    background: $green;
+                }
+            }
+
+            &.active {
+
+                &:after {
+                    content: "-";
+                }
+
+                h1,h2,h3,h4,h5,h6 {
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    display: block!important;
+                }
+            }
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            h1,h2,h3,h4,h5,h6 {
+                margin-bottom: 0;
+            }
+
+            p {
+                @include rem(font-size, $english);
+                margin-bottom: 0;
+
+                .js & {
+                    display: none;
+                }
+
+                & + p {
+                    margin-bottom: $distance;
+                }
+            }
+        }
+    }
+}

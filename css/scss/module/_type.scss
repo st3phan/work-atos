@@ -1,0 +1,82 @@
+h1,h2,h3,h4,h5,h6,
+.btn,
+.menu-toggle,
+nav[role=navigation] > ul > li,
+.header-title-text,
+.carousel-text .join,
+.carousel-counter .flip,
+.carousel-counter .days,
+.flip-counter,
+.filter-nav .header {
+    font-family: Stag-Medium;
+    letter-spacing: .5pt;
+    font-weight: normal;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+h1,
+.like-h1 {
+    margin: 0 0 5px 0;
+    @include rem(font-size, $double-great-primer);
+    color: $blue;
+    
+    @include respond-to(medium) {
+        @include rem(font-size, $canon);
+    }
+}
+
+h2,
+.like-h2 {
+    margin: 0 0 5px 0;
+    @include rem(font-size, $double-pica);
+    color: $blueLight;
+    letter-spacing: .75px;
+    
+    @include respond-to(medium) {
+        @include rem(font-size, $four-line-brevier);
+    }
+}
+
+h3,
+.like-h3 {
+    margin: 0 0 5px 0;
+    @include rem(font-size, $double-pica);
+    color: $black;
+    letter-spacing: .75px;
+}
+
+h4,
+.like-h4 {
+    margin: 0 0 5px 0;
+    @include rem(font-size, $great-primer);
+    color: $black;
+    letter-spacing: .75px;
+}
+
+h5,
+.like-h5,
+h6,
+.like-h6 {
+    margin: 0;
+    @include rem(font-size, $columbian);
+    color: $black;
+    letter-spacing: .75px;
+}
+
+li,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+    @include rem(font-size, $english);
+}
+
+p {
+    margin: 0;
+    @include rem(font-size, $english);
+}

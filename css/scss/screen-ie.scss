@@ -1,0 +1,11 @@
+@charset "utf-8"; //https://github.com/nex3/sass/issues/620
+
+$media-queries: false;
+$media-query-free-breakpoint: full;
+
+@import "screen";
+
+.page-wrapper {
+    min-width: 1000px;
+    max-width: 1090px;
+}

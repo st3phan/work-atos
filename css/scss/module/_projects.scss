@@ -1,0 +1,44 @@
+.project {
+    @include clear;
+    margin: 0 0 $distance 0;
+    padding: $distance;
+    background: $greenLight;
+    
+    .vsl {
+        margin: 0 0 $distance 0;
+        background: $white;
+        
+        img {
+            max-width: 100%;
+            vertical-align: bottom;
+        }
+    }
+    
+    .text {
+        position: relative;
+        
+        p {
+            @include rem(font-size, $pica);
+        }
+    }
+    
+    h1 {
+        padding: 0 $distance-m 0 0;
+    }
+    
+    .more {
+        margin: $distance 0 0 0;
+        
+        .fb {
+            margin-top: 3px;
+            float: right;
+        }
+    }
+    
+    .flag {
+        position: absolute;
+        top: -5px;
+        right: 0;
+        width: 24px;
+    }
+}

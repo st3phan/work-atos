@@ -1,0 +1,372 @@
+.carousel {
+    position: relative;
+}
+
+.carousel-wrapper {
+    @include clear;
+    position: relative;
+    min-height: 135px;
+    
+    @include respond-to(medium) {
+        min-height: 200px;
+    }
+    
+    .is-home & {
+    
+        @include respond-to(large) {
+            min-height: 300px;
+            
+            @media screen and (min-height: 800px) {
+                min-height: 400px;
+            }
+            
+            @media screen and (min-height: 920px) {
+                min-height: 500px;
+            }
+        }
+    }
+}
+
+.carousel-text {
+    margin: 0 0 $distance;
+    
+    @include respond-to(medium) {
+        margin-bottom: $distance-m;
+    }
+    
+    @include respond-to(large) {
+        float: right;
+        width: 40%;
+        padding-top: $distance-m;
+        padding-right: $gutter;
+        padding-left: $gutter;
+        background: 0!important;
+    }
+    
+    h1 {
+        @include rem(font-size, $four-line-brevier);
+        color: $black;
+        
+        @include respond-to(large) {
+        
+            @media screen and (min-height: 800px) {
+                @include rem(font-size, $canon);
+            }
+        }
+    }
+    
+    ol {
+        margin: $distance 0;
+        
+        li {
+            list-style-type: decimal;
+            margin: 0 0 0 25px;
+        }
+    }
+    
+    .join {
+        display: inline-block;
+        margin: $distance 0 0 0;
+        @include rem(font-size, $double-pica);
+        color: $purple;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        
+        &:hover {
+            border-bottom: 2px solid $purpleLight;
+        }
+    }
+}
+
+.carousel-visuals {
+    position: relative;
+    min-height: inherit;
+        
+    @include respond-to(medium) {
+        min-height: inerhit;
+    }
+    
+    @include respond-to(large) {
+        z-index: 9;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .is-home & {
+    
+        @include respond-to(large) {
+            min-height: inerhit;
+        }
+    }
+}
+
+.carousel-visuals-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.carousel-visuals-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include background-size(cover);
+    background-position: right center;
+    overflow: hidden;
+    
+    img {
+        width: 100%;
+        vertical-align: bottom;
+    }
+}
+
+.carousel-text {
+    position: relative;
+    z-index: 10;
+}
+
+.carousel-tabs {
+    position: relative;
+    
+    @include respond-to(large) {
+        z-index: 11;
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 100%;
+    }
+    
+    .is-home & {
+        
+        @include respond-to(large) {
+            position: relative;
+            top: 0;
+            bottom: 0;
+            display: table;
+            width: 100%;
+        }
+    }
+
+    > li {
+        position: relative;
+        @include clear;
+        background: $green;
+        vertical-align: top;
+        border-top: 2px solid $white;
+        
+        .is-home & {
+        
+            @include respond-to(large) {
+                display: table-cell;
+            }        
+        }
+        
+        @include respond-to(large) {
+            width: 20%;
+        }
+        
+        @include respond-to(full) {
+            width: 21%;
+        }
+        
+        
+        &.past:hover {
+            background: $greenLight;
+        }
+        
+        &.active {
+            position: relative;
+            background: $purple;
+            
+            @include respond-to(large) {
+                width: 40%;
+                border-top: 0;
+            }
+
+            @include respond-to(full) {
+                width: 37%;
+            }
+            
+            &:after {
+                display: none;
+            }
+                        
+            .carousel-link {
+                position: relative;
+                background: $purple;
+                
+                .is-home & {
+                
+                    @include respond-to(large) {
+                        top: -15px;
+                        margin-bottom: -15px;
+                    }
+                }
+            }
+        }
+        
+        & + li {
+            
+            @include respond-to(large) {
+                border-left: 2px solid $white;            
+            }
+        }
+        
+        .carousel-link {
+            @include clear;
+            display: block;
+            padding: $gutter;
+        }
+        
+        .tab-header {
+            margin: 0 0 5px 0;
+            padding: 0 25px 0 0;
+            @include rem(font-size, $great-primer);
+            color: $white;
+            
+            @include respond-to(large) {
+                position: relative;
+            }
+            
+            &:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: $gutter;
+                background-image: url(../img/svg/arrow_up_small.svg);
+                @include background-size(100% 100%);
+                width: 16px;
+                height: 16px;
+                margin-top: -8px;
+                
+                @include respond-to(large) {
+                    background-image: url(../img/svg/arrow_up_small.svg);
+                    width: 9px;
+                    height: 10px;
+                    margin-top: -5px;
+                    right: 0;
+                }
+            }
+        }
+        
+        .tab-header-active {
+            margin: 0;
+            color: $white;
+            @include rem(font-size, $great-primer);
+        
+            @include respond-to(small) {
+                float: left;
+                width: 50%;
+            }
+            
+            @include respond-to(full) {
+                @include rem(font-size, $double-pica);
+            }
+        }
+        
+        p {
+            @include rem(font-size, $pica);
+            color: $black;
+        }
+    }
+}
+
+.carousel-counter {
+    float: left;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin-top: 5px;;
+    
+    @include respond-to(small) {
+        float: right;
+        margin-top: 0;
+    }
+    
+    .flippers {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        font-size: 0;
+        
+        &:before {
+        
+            @include respond-to(large) {
+                z-index: 9;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                content: "";
+                display: inline-block;
+                width: 100px;
+                height: 71px;
+                margin: -35px 0 0 -50px;
+                background-image: url(../img/svg/mark.svg);
+                @include background-size(100% 100%);
+            }
+            
+            @include respond-to(full) {
+                width: 138px;
+                height: 98px;
+                margin: -49px 0 0 -69px;
+            }
+        }
+    }
+    
+    .flip {
+        position: relative;
+        display: inline-block;
+        width: 28px;
+        vertical-align: middle;
+        background: $white;
+        @include background-image(linear-gradient(top,  #d7d7d7 0%,#fff 50%,#f5f5f5 100%));
+        @include rem(font-size, $double-pica);
+        color: $black;
+        line-height: 1;
+        text-align: center;
+        padding: 2px 4px;
+        @include box-shadow(0 1px 0 0 rgba($black,.25));
+        
+        @include respond-to(full) {
+            width: 32px;
+            @include rem(font-size, $double-great-primer);
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: $purple;
+            margin-top: -1px;
+            @include box-shadow(0 1px 0 0 rgba($purple,.1));
+        }
+        
+        & + .flip {
+            margin-left: 1px;
+        }
+    }
+    
+    .days {
+        position: relative;
+        z-index: 10;
+        display: inline-block;
+        margin-left: $gutter/2;
+        @include rem(font-size, $great-primer);
+        color: $white;
+        vertical-align: middle;
+        
+        @include respond-to(full) {
+            @include rem(font-size, $double-pica);
+        }
+    }
+}

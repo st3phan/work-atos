@@ -1,0 +1,67 @@
+/*  Media queries
+    ========================================================================== */
+    $breakpoints: 					small 37.5em, medium 48em, large 60em, full 71.25em;
+    
+    $gutter: 						10px;
+    $gutter-full:					20px;
+    $gutter-mq:						medium; // Media query breakpoint when gutters are doubled
+    
+    $push:							true;
+    $pull:							true;
+    
+    $max-total-width:				1180px;
+
+/*  Colours
+    ========================================================================== */
+    $green:                         #00b2a9;
+    $greenLight:                    #4cc9c3;
+    $purple:                        #a626aa;
+    $purpleLight:                   #ad77b2;
+    $purple2:                       #6639b7;
+    $purple2Light:                  #9474cd;
+    $orange:                        #ff6319;
+    $orangeLight:                   #ff925e;
+    $olive:                         #aea400;
+    $oliveLight:                    #c6bf4c;
+    $blue:                          #0066a1;
+    $blueLight:                     #66a3c7;
+    
+    $red:                           #f00;
+    
+    $grey:                          #808080;
+    $greyLight:                     #bfbfbf;
+    $greyExtraLight:                #f2f2f2;
+    
+    $black:                         #000;
+    $white:                         #fff;
+
+/*  Type
+    ========================================================================== */
+    $fontsize:						16px;
+    
+    $fontstack-text:		 		Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    $fontstack-display:				Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
+    $pentuple-columbian:			80px;
+    $triple-great-primer:			72px;
+    $canon:							48px;
+    $double-great-primer:			36px;
+    $four-line-brevier:				32px;
+    $double-pica:					24px;
+    $double-small-pica:				20px;
+    $great-primer:					18px;
+    $columbian:						16px;
+    $english:						14px;
+    $pica:							12px;
+    $long-primer:					10px;
+    $brevier:						8px;
+    
+    $fontsize-icon:					$columbian;
+    
+/*  Alignment
+    ========================================================================== */
+    $distance:						$fontsize;
+    $distance-s:					$distance * 1.5;
+    $distance-m:					$distance-s * 1.5;
+    $distance-l:					$distance-m * 1.5;
+    $distance-xl:					$distance-l * 1.5;

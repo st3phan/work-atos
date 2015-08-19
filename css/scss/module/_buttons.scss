@@ -1,0 +1,107 @@
+.btn {
+    display: inline-block;
+    padding: 6px 15px 8px 10px;
+    background-image: url(../img/svg/swoosh_purple.svg);
+    background-repeat: no-repeat;
+    @include background-size(100% 100%);
+    color: $white!important;
+    font-size: $pica;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    line-height: 1;
+    
+    .no-svg & {
+        position: relative;
+        background: $purple;
+        margin-left: 6px;
+        padding-right: 9px;
+        padding-left: 4px;
+        
+        &:before,
+        &:after {
+            position: absolute;
+            top: 0;
+            content: "";
+            width: 6px;
+            height: 100%;
+        }
+        
+        &:before {
+            left: -6px;
+            background: url(../img/btn-nosvg-left-purple.png) no-repeat;
+        }
+        
+        &:after {
+            right: -6px;
+            background: url(../img/btn-nosvg-right-purple.png) no-repeat;
+        }
+    }
+    
+    &.btn-secondary {
+        background-image: url(../img/svg/swoosh_blue.svg);
+        
+        .no-svg & {
+            background: $blue;
+            
+           &:before {
+                background: url(../img/btn-nosvg-left-blue.png) no-repeat;
+            }
+            
+            &:after {
+                background: url(../img/btn-nosvg-right-blue.png) no-repeat;
+            }
+        }
+    }
+    
+    &.btn-tertiary {
+        background-image: url(../img/svg/swoosh_green.svg);
+        
+        .no-svg & {
+            background: $green;
+            
+            &:before {
+                background: url(../img/btn-nosvg-left-green.png) no-repeat;
+            }
+            
+            &:after {
+                background: url(../img/btn-nosvg-right-green.png) no-repeat;
+            }
+        }
+    }
+    
+    &.btn-quaternary {
+        background-image: url(../img/svg/swoosh_green-light.svg);
+        
+        .no-svg & {
+            background: $greenLight;
+            
+            &:before {
+                background: url(../img/btn-nosvg-left-green-light.png) no-repeat;
+            }
+            
+            &:after {
+                background: url(../img/btn-nosvg-right-green-light.png) no-repeat;
+            }
+        }
+    }
+    
+    &:before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 9px;
+        margin-right: $gutter/2;
+        background-image: url(../img/svg/arrow_right_white.svg);
+        background-repeat: no-repeat;
+        @include background-size(100% 100%);
+    }
+    
+    .svg &.no-arrow:before {
+        display: none;
+    }
+}
+
+a.btn:hover {
+    text-decoration: underline;
+}

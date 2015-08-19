@@ -1,0 +1,14 @@
+.intro-box {
+    margin: 0 0 $distance;
+    padding: $distance $gutter;
+    background: $greyExtraLight;
+    
+    @include respond-to(small) {
+        margin-bottom: $distance-s;
+        padding: $distance-s $gutter $distance $distance-s;
+    }
+    
+    @include respond-to(medium) {
+        padding: $distance-s $gutter-full;   
+    }
+}

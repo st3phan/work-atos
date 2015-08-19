@@ -1,0 +1,148 @@
+footer[role="contentinfo"] {
+    @include clear;
+    padding: 0 0 $distance;
+    
+    @include respond-to(medium) {
+        padding-bottom: $distance-m;
+    }
+    
+    .atos_worldwide_it_partner {
+        display: inline-block;
+        width: 147px;
+        height: 32px;
+        background-image: url(../img/svg/atos_worldwide_it_partner.svg);
+        background-repeat: no-repeat;
+        @include background-size(100% 100%);
+        
+        @include respond-to(small) {
+            width: 167px;
+            height: 36px;
+        }
+        
+        .no-svg & {
+            background-image: url(../img/atos_worldwide_it_partner.png);
+        }
+    }
+    
+    .atos_worldwide_paralympic_it_partner {
+        display: inline-block;
+        width: 116px;
+        height: 29px;
+        background-image: url(../img/svg/atos_worldwide_paralympic_it_partner.svg);
+        background-repeat: no-repeat;
+        @include background-size(100% 100%);
+        
+        @include respond-to(small) {
+            width: 136px;
+            height: 34px;
+        }
+        
+        .no-svg & {
+            background-image: url(../img/atos_worldwide_paralympic_it_partner.png);
+        }
+    }
+    
+    .hr {
+    
+        @include respond-to(large) {
+            display: none;
+        }
+        
+        &.footer-divider {
+            @include respond-to(large) {
+                display: block;
+            }
+        }
+    }
+}
+
+.footer-copyright {
+    @include clear;
+
+    @include respond-to(large) {
+        float: left;
+    }
+    
+    li {
+        float: left;
+        color: $grey;
+        @include rem(font-size, 11px);
+        
+        & + li {
+            margin-left: $gutter-full;
+        }
+        
+        &.copyright {
+            clear: both;
+            margin-top: $distance;
+            margin-left: 0;
+            
+            @include respond-to(full) {
+                clear: none;
+                margin-top: 0;
+                margin-left: $gutter-full;
+                padding-top: 20px;
+            }
+        }
+    }
+}
+
+.nav-footer {
+
+    ol {
+        @include clear;
+        
+        @include respond-to(medium) {
+
+        }
+        
+        @include respond-to(large) {
+            float: right;
+            padding-top: 3px;
+        }
+        
+        @include respond-to(full) {
+            padding-top: 0;
+        }
+    
+        li {
+            float: left;
+            width: 50%;
+            color: $grey;
+            @include rem(font-size, 11px);
+            
+            @include respond-to(medium) {
+                float: right;
+                width: auto;
+                margin-left: $gutter;
+            }
+            
+            @include respond-to(large) {
+                padding-top: 20px;
+            }
+            
+            @include respond-to(full) {
+               padding-top: 20px; 
+            }
+
+            &.x {
+                
+                @include respond-to(large) {
+                    clear: both;
+                }
+                
+                @include respond-to(full) {
+                    clear: none;
+                }
+            }
+            
+            a {
+                color: $grey;
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
